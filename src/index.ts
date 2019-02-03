@@ -9,9 +9,8 @@ var person = { name: 'Sergio' }
 
 app.get('/hello', (req, res) => {
 
-    const name = 'Sergio'
-
-    res.send(`Hello from server, ${name}!`)
+    res.send(`Hello from server, ${person.name}!`)
+    
 })
 
 app.post('/name', (req, res) => {
@@ -25,7 +24,7 @@ app.post('/name', (req, res) => {
 
     person.name = name
 
-    res.send(`Name changed to ${name}`)
+    res.send(`Name changed to ${person.name}`)
 
 })
 
