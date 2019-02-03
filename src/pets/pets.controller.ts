@@ -1,27 +1,28 @@
 import { Router } from "express";
+import { PetsService } from "./pets.service";
 
 export const PetController = Router()
 
-var person = {name: 'Sergio'}
+const petsService = new PetsService()
 
-PetController.get('/hello', (req, res) => {
+PetController.get('/', (req, res) => {
 
-    const name = 'Sergio'
+    let pets = petsService.getAll()
 
-    res.send(`Hello from server, ${name}!`)
+    res.send(pets)
 })
 
-PetController.post('/name', (req, res) => {
+PetController.post('/', (req, res) => {
 
-    let name = req.body.name
+    let pet = req.body
 
-    if (!name){
-        res.send('Name is required')
+    if (!pet){
+        res.send('Pet is required')
         return;
     }
 
-    person.name = name
+    petsService.addPet(pet)
 
-    res.send(`Name changed to ${name}`)
+    res.send('Added new pet')
 
 })
