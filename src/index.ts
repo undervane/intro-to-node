@@ -2,14 +2,14 @@ import express from 'express'
 
 const app = express();
 
-const port = 3000
+var person = { name: 'Sergio' }
 
 app.get('/hello', (req, res) => {
 
-    const name = 'Sergio'
-
-    res.send(`Hello from server, ${name}!`)
+    res.send(`Hello from server, ${person.name}!`)
 
 })
+
+const port = 3000
 
 app.listen(port, () => console.info(`Server is ready on http://localhost:${port}`))
