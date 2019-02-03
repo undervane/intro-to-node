@@ -1,22 +1,16 @@
 import { PetType } from "../@types/pet.type";
+import { PetsRepository } from "./pets.repository";
 
 export class PetsService {
 
-    pets = [
-        {
-            name: 'Pigu', emoji: '🐧'
-        },
-        {
-            name: 'Bug', emoji: '🐞'
-        }
-    ] as PetType[]
+    petsRepository = new PetsRepository()
 
     getAll(): PetType[]{
-        return this.pets
+        return this.petsRepository.pets
     }
 
     addPet(pet: PetType){
-        this.pets.push(pet)
+        this.petsRepository.add(pet)
     }
 
 }
