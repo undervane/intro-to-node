@@ -9,6 +9,10 @@ export class PetsRepository {
         return this.petsDatabase
     }
 
+    findByName(name: string): PetType{
+        return this.petsDatabase.find(pet => pet.name === name)
+    }
+
     add(pet: PetType){
         this.petsDatabase.push(pet)
     }

@@ -9,6 +9,10 @@ export class PetsService {
         return this.petsRepository.get()
     }
 
+    getByName(name: string): PetType{
+        return this.petsRepository.findByName(name)
+    }
+
     addPet(pet: PetType){
         this.petsRepository.add(pet)
     }
