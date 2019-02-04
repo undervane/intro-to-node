@@ -6,7 +6,7 @@ export class PetsService {
     petsRepository = new PetsRepository()
 
     getAll(): PetType[]{
-        return this.petsRepository.pets
+        return this.petsRepository.get()
     }
 
     addPet(pet: PetType){

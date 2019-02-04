@@ -1,12 +1,16 @@
 import { PetType } from "../@types/pet.type";
-import { PetsListStatic } from "../static/pets.static";
+import { PetsStaticDatabase } from "../static/pets.static";
 
 export class PetsRepository {
 
-    pets = PetsListStatic
+    petsDatabase = PetsStaticDatabase
+
+    get(): PetType[]{
+        return this.petsDatabase
+    }
 
     add(pet: PetType){
-        this.pets.push(pet)
+        this.petsDatabase.push(pet)
     }
 
 }

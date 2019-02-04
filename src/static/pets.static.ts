@@ -1,6 +1,6 @@
 import { PetType } from "../@types/pet.type";
 
-export var PetsListStatic = [
+export var PetsStaticDatabase = [
     {
         name: 'Pigu', emoji: '🐧'
     },
